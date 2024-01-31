@@ -5,9 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	
   <ItemGroup>
-    <ProjectReference Include="..\Sportradar.Scoreboard.Data\Sportradar.Scoreboard.Data.csproj" />
+	<InternalsVisibleTo Include="Sportradar.Scoreboard.Data.Tests" />
   </ItemGroup>
-
 </Project>

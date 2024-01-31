@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Sportradar.Scoreboard/1.0.0": {
+        "dependencies": {
+          "Sportradar.Scoreboard.Data": "1.0.0"
+        },
+        "runtime": {
+          "Sportradar.Scoreboard.dll": {}
+        }
+      },
+      "Sportradar.Scoreboard.Data/1.0.0": {
+        "runtime": {
+          "Sportradar.Scoreboard.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Sportradar.Scoreboard/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sportradar.Scoreboard.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

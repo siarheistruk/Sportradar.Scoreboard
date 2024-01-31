@@ -1,0 +1,16 @@
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.csproj.AssemblyReference.cache
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.AssemblyInfoInputs.cache
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.AssemblyInfo.cs
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.sourcelink.json
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\bin\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.deps.json
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\bin\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.dll
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\bin\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.pdb
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.dll
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\refint\Sportradar.Scoreboard.Data.Tests.dll
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.pdb
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\ref\Sportradar.Scoreboard.Data.Tests.dll
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\bin\Debug\net8.0\Sportradar.Scoreboard.Data.dll
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\bin\Debug\net8.0\Sportradar.Scoreboard.Data.pdb
+C:\Users\Sergiusz\Documents\Sportradar.Scoreboard\Sportradar.Scoreboard.Data.Tests\obj\Debug\net8.0\Sportradar.Scoreboard.Data.Tests.csproj.CopyComplete

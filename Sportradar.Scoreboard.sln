@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sportradar.Scoreboard", "Sportradar.Scoreboard\Sportradar.Scoreboard.csproj", "{C2DC5959-04DE-4ADC-9108-5A77C64E01B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sportradar.Scoreboard", "Sportradar.Scoreboard\Sportradar.Scoreboard.csproj", "{C2DC5959-04DE-4ADC-9108-5A77C64E01B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sportradar.Scoreboard.Data", "Sportradar.Scoreboard.Data\Sportradar.Scoreboard.Data.csproj", "{1D06EB88-E103-494E-AFBB-27317D0A920E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4006403D-09B9-4DE1-9DEA-CE7AD98D9CFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sportradar.Scoreboard.Tests", "Sportradar.Scoreboard.Tests\Sportradar.Scoreboard.Tests.csproj", "{203DB682-A7FC-4861-80C9-F9D89F99AAAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sportradar.Scoreboard.Data.Tests", "Sportradar.Scoreboard.Data.Tests\Sportradar.Scoreboard.Data.Tests.csproj", "{F04559E3-1415-4973-9791-83BAE4854C40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +23,25 @@ Global
 		{C2DC5959-04DE-4ADC-9108-5A77C64E01B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2DC5959-04DE-4ADC-9108-5A77C64E01B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2DC5959-04DE-4ADC-9108-5A77C64E01B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D06EB88-E103-494E-AFBB-27317D0A920E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D06EB88-E103-494E-AFBB-27317D0A920E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D06EB88-E103-494E-AFBB-27317D0A920E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D06EB88-E103-494E-AFBB-27317D0A920E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F04559E3-1415-4973-9791-83BAE4854C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04559E3-1415-4973-9791-83BAE4854C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04559E3-1415-4973-9791-83BAE4854C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04559E3-1415-4973-9791-83BAE4854C40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{203DB682-A7FC-4861-80C9-F9D89F99AAAC} = {4006403D-09B9-4DE1-9DEA-CE7AD98D9CFF}
+		{F04559E3-1415-4973-9791-83BAE4854C40} = {4006403D-09B9-4DE1-9DEA-CE7AD98D9CFF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F91115C4-47C4-454E-91BB-87BF2AAE8920}

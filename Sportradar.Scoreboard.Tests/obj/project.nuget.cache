@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "DXw4JrHwkJ5TcCNhpFgB9C3RGOPrF+hXftp7UIKpxT95+PNXGBN6gqLbdxXmSo31YJIhmS5NzvACp/lBPEMgRw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sergiusz\\Documents\\Sportradar.Scoreboard\\Sportradar.Scoreboard.Tests\\Sportradar.Scoreboard.Tests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sergiusz\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\Sergiusz\\.nuget\\packages\\moq\\4.20.70\\moq.4.20.70.nupkg.sha512",
+    "C:\\Users\\Sergiusz\\.nuget\\packages\\nunit\\4.0.1\\nunit.4.0.1.nupkg.sha512",
+    "C:\\Users\\Sergiusz\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
