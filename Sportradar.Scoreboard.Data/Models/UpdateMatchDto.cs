@@ -2,6 +2,8 @@
 {
     public record UpdateMatchDto
     {
-        public int Id { get; init; }
+        public int MatchId { get; init; }
+        public int HomeTeamScore { get; init; }
+        public int GuestTeamScore { get; init; }
     }
 }
