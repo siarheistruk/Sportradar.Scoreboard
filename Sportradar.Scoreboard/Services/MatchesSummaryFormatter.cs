@@ -2,7 +2,7 @@
 
 namespace Sportradar.Scoreboard.Services
 {
-    internal class MatchesSummaryFormatter : IMatchesSummaryFormatter
+    internal sealed class MatchesSummaryFormatter : IMatchesSummaryFormatter
     {
         public IReadOnlyList<Match> FormatMatches(IEnumerable<Match> matches)
         {

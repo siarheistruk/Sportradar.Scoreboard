@@ -1,6 +1,6 @@
 ﻿namespace Sportradar.Scoreboard.Data.Dto
 {
-    public record MatchDto
+    public sealed record MatchDto
     {
         public int Id { get; init; }
         public string HomeTeamName { get; init; } = null!;
