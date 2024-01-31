@@ -6,7 +6,15 @@ namespace Sportradar.Scoreboard.Services
     {
         public IReadOnlyList<Match> FormatMatches(IEnumerable<Match> matches)
         {
-            throw new NotImplementedException();
+            if (matches == null || !matches.Any())
+            {
+                return new List<Match>(0);
+            }
+
+            return matches
+                .OrderByDescending(x => x.HomeTeamScore + x.GuestTeamScore)
+                .ThenByDescending(x => x.MatchStartTimestampMs)
+                .ToList();
         }
     }
 }
