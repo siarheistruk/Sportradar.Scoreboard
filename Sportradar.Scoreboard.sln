@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sportradar.Scoreboard.Data"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4006403D-09B9-4DE1-9DEA-CE7AD98D9CFF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sportradar.Scoreboard.Tests", "Sportradar.Scoreboard.Tests\Sportradar.Scoreboard.Tests.csproj", "{203DB682-A7FC-4861-80C9-F9D89F99AAAC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sportradar.Scoreboard.Data.Tests", "Sportradar.Scoreboard.Data.Tests\Sportradar.Scoreboard.Data.Tests.csproj", "{B48BA401-E6C0-4394-B22F-42DC8E8C1F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sportradar.Scoreboard.Tests", "Sportradar.Scoreboard.Tests\Sportradar.Scoreboard.Tests.csproj", "{71ADED20-96DD-4F8F-93E3-862FABE0C83F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,21 +27,21 @@ Global
 		{1D06EB88-E103-494E-AFBB-27317D0A920E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D06EB88-E103-494E-AFBB-27317D0A920E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D06EB88-E103-494E-AFBB-27317D0A920E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{203DB682-A7FC-4861-80C9-F9D89F99AAAC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B48BA401-E6C0-4394-B22F-42DC8E8C1F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B48BA401-E6C0-4394-B22F-42DC8E8C1F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B48BA401-E6C0-4394-B22F-42DC8E8C1F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B48BA401-E6C0-4394-B22F-42DC8E8C1F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71ADED20-96DD-4F8F-93E3-862FABE0C83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71ADED20-96DD-4F8F-93E3-862FABE0C83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71ADED20-96DD-4F8F-93E3-862FABE0C83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71ADED20-96DD-4F8F-93E3-862FABE0C83F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{203DB682-A7FC-4861-80C9-F9D89F99AAAC} = {4006403D-09B9-4DE1-9DEA-CE7AD98D9CFF}
 		{B48BA401-E6C0-4394-B22F-42DC8E8C1F51} = {4006403D-09B9-4DE1-9DEA-CE7AD98D9CFF}
+		{71ADED20-96DD-4F8F-93E3-862FABE0C83F} = {4006403D-09B9-4DE1-9DEA-CE7AD98D9CFF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F91115C4-47C4-454E-91BB-87BF2AAE8920}

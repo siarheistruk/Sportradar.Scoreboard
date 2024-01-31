@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Sportradar.Scoreboard.Data\Sportradar.Scoreboard.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+	<InternalsVisibleTo Include="Sportradar.Scoreboard.Tests" />
+  </ItemGroup>
+
 </Project>

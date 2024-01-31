@@ -1,4 +1,4 @@
-﻿namespace Sportradar.Scoreboard.Data.Models
+﻿namespace Sportradar.Scoreboard.Data.Dto
 {
     public record MatchDto
     {
@@ -7,6 +7,6 @@
         public string GuestTeamName { get; init; } = null!;
         public int HomeTeamScore { get; set; }
         public int GuestTeamScore { get; set; }
-        public long MatchStartTimestampMs;
+        public long MatchStartTimestampMs { get; init; }
     }
 }

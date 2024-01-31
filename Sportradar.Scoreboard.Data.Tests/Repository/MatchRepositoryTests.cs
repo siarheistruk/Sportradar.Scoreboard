@@ -1,4 +1,4 @@
-﻿using Sportradar.Scoreboard.Data.Models;
+﻿using Sportradar.Scoreboard.Data.Dto;
 using Sportradar.Scoreboard.Data.Repository;
 
 namespace Sportradar.Scoreboard.Data.Tests.Repository

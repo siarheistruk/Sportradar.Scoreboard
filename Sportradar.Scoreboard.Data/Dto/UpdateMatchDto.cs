@@ -1,4 +1,4 @@
-﻿namespace Sportradar.Scoreboard.Data.Models
+﻿namespace Sportradar.Scoreboard.Data.Dto
 {
     public record UpdateMatchDto
     {
