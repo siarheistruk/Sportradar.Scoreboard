@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sportradar.Scoreboard.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09a30ef5f868b3fca889f46813aa25dda722e653")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65cdc86a7405e418a127f55e509e16b3734df0a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sportradar.Scoreboard.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sportradar.Scoreboard.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,5 +8,6 @@
 	
   <ItemGroup>
 	<InternalsVisibleTo Include="Sportradar.Scoreboard.Data.Tests" />
+	<InternalsVisibleTo Include="Sportradar.Scoreboard.Tests" />
   </ItemGroup>
 </Project>

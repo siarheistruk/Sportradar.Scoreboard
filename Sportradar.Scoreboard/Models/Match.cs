@@ -1,6 +1,6 @@
 ﻿namespace Sportradar.Scoreboard.Models
 {
-    internal sealed record Match
+    public sealed record Match
     {
         public int Id { get; init; }
         public string HomeTeamName { get; init; } = null!;

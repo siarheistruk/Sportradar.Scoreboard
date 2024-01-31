@@ -4,8 +4,13 @@ namespace Sportradar.Scoreboard.Factories
 {
     internal sealed class MatchFactory : IMatchFactory
     {
-        public Match CreateMatch(string homeTeamName, string guestTeamName)
+        public Match? CreateMatch(string homeTeamName, string guestTeamName)
         {
+            if (string.IsNullOrEmpty(homeTeamName) || string.IsNullOrEmpty(guestTeamName))
+            {
+                return null;
+            }
+
             DateTime currentTime = DateTime.UtcNow;
             long unixTime = ((DateTimeOffset)currentTime).ToUnixTimeMilliseconds();
             return new Match
