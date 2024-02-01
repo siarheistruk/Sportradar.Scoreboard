@@ -1,6 +1,6 @@
 ﻿using Sportradar.Scoreboard.Data.Repository;
 using Sportradar.Scoreboard.Factories;
-using System.Runtime.InteropServices;
+using Sportradar.Scoreboard.Services;
 
 namespace Sportradar.Scoreboard.Tests
 {
@@ -10,7 +10,7 @@ namespace Sportradar.Scoreboard.Tests
         public void StartMatch_InputParametersNotNullOrEmpty_StartsNewMatchAndReturnsMatchId()
         {
             var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory());
+            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
 
             var actual = matchOperator.StartMatch("Team1", "Team2");
 
@@ -22,7 +22,7 @@ namespace Sportradar.Scoreboard.Tests
         public void StartMatch_InputParametersNullOrEmpty_DoNotStartNewRoundAndReturnsInvalidId()
         {
             var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory());
+            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
 
             var actual = matchOperator.StartMatch("", null);
 
@@ -35,7 +35,7 @@ namespace Sportradar.Scoreboard.Tests
         {
             var matchId = 1;
             var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory());
+            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
             matchOperator.StartMatch("Team1", "Team2");
             matchOperator.StartMatch("Team2", "Team3");
             matchOperator.StartMatch("Team4", "Team5");
@@ -51,7 +51,7 @@ namespace Sportradar.Scoreboard.Tests
         {
             var matchId = 1;
             var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory());
+            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
             matchOperator.StartMatch("Team1", "Team2");
             var previos = matchRepository.GetAll();
 
@@ -66,7 +66,7 @@ namespace Sportradar.Scoreboard.Tests
         {
             var matchId = 1;
             var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory());
+            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
             matchOperator.StartMatch("Team1", "Team2");
             matchOperator.StartMatch("Team3", "Team4");
 
@@ -81,7 +81,7 @@ namespace Sportradar.Scoreboard.Tests
         {
             var matchId = 1;
             var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory());
+            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
             matchOperator.StartMatch("Team1", "Team2");
             var previos = matchRepository.GetAll();
 
@@ -94,7 +94,7 @@ namespace Sportradar.Scoreboard.Tests
         public void GetMatchesSummary_Always_ReturnsCorrectMatchesResult()
         {
             var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory());
+            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
             matchOperator.StartMatch("Team1", "Team2");
             matchOperator.StartMatch("Team3", "Team4");
             matchOperator.StartMatch("Team5", "Team6");
@@ -102,17 +102,17 @@ namespace Sportradar.Scoreboard.Tests
             matchOperator.StartMatch("Team9", "Team10");
             matchOperator.UpdateMatch(0, 4, 4);
             matchOperator.UpdateMatch(1, 1, 1);
-            matchOperator.UpdateMatch(2, 2, 0);
-            matchOperator.UpdateMatch(3, 3, 3);
-            matchOperator.UpdateMatch(4, 5, 3);
+            matchOperator.UpdateMatch(2, 3, 3);
+            matchOperator.UpdateMatch(3, 2, 2);
+            matchOperator.UpdateMatch(4, 1, 2);
 
             var actual = matchOperator.GetMatchesSummary();
 
-            Assert.That(actual[0].Id, Is.EqualTo(4));
             Assert.That(actual[0].Id, Is.EqualTo(0));
-            Assert.That(actual[0].Id, Is.EqualTo(3));
-            Assert.That(actual[0].Id, Is.EqualTo(2));
-            Assert.That(actual[0].Id, Is.EqualTo(1));
+            Assert.That(actual[1].Id, Is.EqualTo(2));
+            Assert.That(actual[2].Id, Is.EqualTo(3));
+            Assert.That(actual[3].Id, Is.EqualTo(4));
+            Assert.That(actual[4].Id, Is.EqualTo(1));
         }
     }
 }
