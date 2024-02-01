@@ -1,6 +1,6 @@
 ﻿using Sportradar.Scoreboard.Models;
 
-namespace Sportradar.Scoreboard.Services
+namespace Sportradar.Scoreboard.Formatters
 {
     internal sealed class MatchesSummaryFormatter : IMatchesSummaryFormatter
     {

@@ -1,9 +1,9 @@
 ﻿using Sportradar.Scoreboard.Data.Dto;
 using Sportradar.Scoreboard.Data.Repository;
 using Sportradar.Scoreboard.Factories;
+using Sportradar.Scoreboard.Formatters;
 using Sportradar.Scoreboard.Helpers;
 using Sportradar.Scoreboard.Models;
-using Sportradar.Scoreboard.Services;
 
 namespace Sportradar.Scoreboard
 {
