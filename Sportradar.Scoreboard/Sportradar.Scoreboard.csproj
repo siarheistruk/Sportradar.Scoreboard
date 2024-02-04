@@ -12,6 +12,7 @@
 
   <ItemGroup>
 	<InternalsVisibleTo Include="Sportradar.Scoreboard.Tests" />
+	<InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
   </ItemGroup>
 
 </Project>

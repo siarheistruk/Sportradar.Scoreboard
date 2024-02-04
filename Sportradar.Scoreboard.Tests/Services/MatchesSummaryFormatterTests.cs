@@ -1,5 +1,5 @@
 ﻿using Sportradar.Scoreboard.Models;
-using Sportradar.Scoreboard.Services;
+using Sportradar.Scoreboard.Formatters;
 
 namespace Sportradar.Scoreboard.Tests.Services
 {
