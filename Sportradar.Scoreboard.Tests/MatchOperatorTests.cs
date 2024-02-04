@@ -1,118 +1,83 @@
-﻿using Sportradar.Scoreboard.Data.Repository;
+﻿using Moq;
+using Sportradar.Scoreboard.Data.Dto;
+using Sportradar.Scoreboard.Data.Repository;
 using Sportradar.Scoreboard.Factories;
-using Sportradar.Scoreboard.Services;
+using Sportradar.Scoreboard.Formatters;
+using System.Collections.Immutable;
 
 namespace Sportradar.Scoreboard.Tests
 {
     internal class MatchOperatorTests
     {
         [Test]
-        public void StartMatch_InputParametersNotNullOrEmpty_StartsNewMatchAndReturnsMatchId()
+        public void StartMatch_MatchIsCreated_MatchIsAddedToRepository()
         {
-            var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
+            var matchFactoryMock = new Mock<IMatchFactory>();
+            var matchRepositoryMock = new Mock<IMatchRepository>();
+            matchFactoryMock
+                .Setup(x => x.CreateMatch(It.IsAny<string>(), It.IsAny<string>()))
+                .Returns(new Models.Match
+                {
+                    Id = 1,
+                });
+            var matchOperator = new MatchOperator(matchRepositoryMock.Object, matchFactoryMock.Object, new MatchesSummaryFormatter());
 
             var actual = matchOperator.StartMatch("Team1", "Team2");
 
-            Assert.That(actual, Is.EqualTo(0));
-            Assert.That(matchRepository.GetAll().Count, Is.EqualTo(1));
+            matchFactoryMock.Verify(x => x.CreateMatch(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
+            matchRepositoryMock.Verify(x => x.Add(It.IsAny<MatchDto>()), Times.Once);
         }
 
         [Test]
-        public void StartMatch_InputParametersNullOrEmpty_DoNotStartNewRoundAndReturnsInvalidId()
+        public void StartMatch_MatchIsNotCreated_MatchIsNotAddedToRepository()
         {
-            var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
+            var matchFactoryMock = new Mock<IMatchFactory>();
+            var matchRepositoryMock = new Mock<IMatchRepository>();
+            var matchOperator = new MatchOperator(matchRepositoryMock.Object, matchFactoryMock.Object, new MatchesSummaryFormatter());
 
             var actual = matchOperator.StartMatch("", null);
 
-            Assert.That(actual, Is.EqualTo(-1));
-            Assert.That(matchRepository.GetAll().Count, Is.EqualTo(0));
+
+            matchFactoryMock.Verify(x => x.CreateMatch(It.IsAny<string>(), It.IsAny<string>()), Times.Once);
+            matchRepositoryMock.Verify(x => x.Add(It.IsAny<MatchDto>()), Times.Never);
         }
 
         [Test]
-        public void UpdateMatch_MatchExists_UpdatesMatch()
+        public void UpdateMatch_Always_CallsUpdateInRepository()
         {
-            var matchId = 1;
-            var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
-            matchOperator.StartMatch("Team1", "Team2");
-            matchOperator.StartMatch("Team2", "Team3");
-            matchOperator.StartMatch("Team4", "Team5");
+            var matchRepositoryMock = new Mock<IMatchRepository>();
+            var matchOperator = new MatchOperator(matchRepositoryMock.Object, new MatchFactory(), new MatchesSummaryFormatter());
 
-            matchOperator.UpdateMatch(matchId, 2, 3);
+            matchOperator.UpdateMatch(0, 2, 3);
 
-            Assert.That(matchRepository.GetAll().FirstOrDefault(x => x.Id == matchId)?.HomeTeamScore, Is.EqualTo(2));
-            Assert.That(matchRepository.GetAll().FirstOrDefault(x => x.Id == matchId)?.GuestTeamScore, Is.EqualTo(3));
+            matchRepositoryMock.Verify(x => x.Update(It.IsAny<UpdateMatchDto>()), Times.Once);
         }
 
         [Test]
-        public void UpdateMatch_MatchDoesNotExists_NothingIsUpdated()
+        public void FinishMatch_Always_CallsDeleteMatchFromRepository()
         {
-            var matchId = 1;
-            var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
-            matchOperator.StartMatch("Team1", "Team2");
-            var previos = matchRepository.GetAll();
+            var matchRepositoryMock = new Mock<IMatchRepository>();
+            var matchOperator = new MatchOperator(matchRepositoryMock.Object, new MatchFactory(), new MatchesSummaryFormatter());
 
-            matchOperator.UpdateMatch(matchId, 2, 3);
+            matchOperator.FinishMatch(0);
 
-            Assert.That(matchRepository.GetAll().FirstOrDefault(x => x.Id == matchId), Is.Null);
-            CollectionAssert.AreEqual(previos, matchRepository.GetAll());
+            matchRepositoryMock.Verify(x => x.Delete(It.IsAny<int>()), Times.Once);
         }
 
         [Test]
-        public void DeleteMatch_MatchExist_DeletesMatch()
+        public void GetMatchesSummary_Always_CallsGetFromRepositoryAndFormatsMatch()
         {
-            var matchId = 1;
-            var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
-            matchOperator.StartMatch("Team1", "Team2");
-            matchOperator.StartMatch("Team3", "Team4");
-
-            matchOperator.FinishMatch(matchId);
-
-            Assert.That(matchRepository.GetAll().FirstOrDefault(x => x.Id == matchId), Is.Null);
-            Assert.That(matchRepository.GetAll().Count, Is.EqualTo(1));
-        }
-
-        [Test]
-        public void DeleteMatch_MatchDoesNotExist_NothingIsDeleted()
-        {
-            var matchId = 1;
-            var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
-            matchOperator.StartMatch("Team1", "Team2");
-            var previos = matchRepository.GetAll();
-
-            matchOperator.FinishMatch(matchId);
-
-            CollectionAssert.AreEqual(previos, matchRepository.GetAll());
-        }
-
-        [Test]
-        public void GetMatchesSummary_Always_ReturnsCorrectMatchesResult()
-        {
-            var matchRepository = new MatchRepository();
-            var matchOperator = new MatchOperator(matchRepository, new MatchFactory(), new MatchesSummaryFormatter());
-            matchOperator.StartMatch("Team1", "Team2");
-            matchOperator.StartMatch("Team3", "Team4");
-            matchOperator.StartMatch("Team5", "Team6");
-            matchOperator.StartMatch("Team7", "Team8");
-            matchOperator.StartMatch("Team9", "Team10");
-            matchOperator.UpdateMatch(0, 4, 4);
-            matchOperator.UpdateMatch(1, 1, 1);
-            matchOperator.UpdateMatch(2, 3, 3);
-            matchOperator.UpdateMatch(3, 2, 2);
-            matchOperator.UpdateMatch(4, 1, 2);
+            var matchRepositoryMock = new Mock<IMatchRepository>();
+            matchRepositoryMock
+                .Setup(x => x.GetAll())
+                .Returns(new List<MatchDto>());
+            var matchesSummaryFormatterMock = new Mock<IMatchesSummaryFormatter>();
+            var matchOperator = new MatchOperator(matchRepositoryMock.Object, new MatchFactory(), matchesSummaryFormatterMock.Object);
 
             var actual = matchOperator.GetMatchesSummary();
 
-            Assert.That(actual[0].Id, Is.EqualTo(0));
-            Assert.That(actual[1].Id, Is.EqualTo(2));
-            Assert.That(actual[2].Id, Is.EqualTo(3));
-            Assert.That(actual[3].Id, Is.EqualTo(4));
-            Assert.That(actual[4].Id, Is.EqualTo(1));
+            matchRepositoryMock.Verify(x => x.GetAll(), Times.Once);
+            matchesSummaryFormatterMock.Verify(x => x.FormatMatches(It.IsAny<IEnumerable<Models.Match>>()), Times.Once);
         }
     }
 }

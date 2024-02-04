@@ -4,6 +4,6 @@ namespace Sportradar.Scoreboard.Factories
 {
     internal interface IMatchFactory
     {
-        public Match? CreateMatch(string homeTeamName, string guestTeamName);
+        Match? CreateMatch(string homeTeamName, string guestTeamName);
     }
 }
